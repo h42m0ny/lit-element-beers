@@ -134,7 +134,6 @@ class BeerList extends LitElement {
                 return beer.name && beer.name.match(new RegExp(this.filterText, 'i'));
             }).sort((a,b) => this._beerSorter(a,b))
             .map((beer) => {
-                console.log(beer.img);
                 return html`
                             <beer-list-item
                                 id="${beer.id}"
