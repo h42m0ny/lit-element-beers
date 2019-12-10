@@ -12,7 +12,7 @@ class BeerDetails extends LitElement {
     async _getData() {
         try {
             
-            const response = await fetch('../data/beers/beers.json');
+            const response = await fetch('data/beers/beers.json');
             let beers = await response.json();
             this.beer = beers.find(item => item.id === this.location.params.id);
         } catch(err){
@@ -39,7 +39,7 @@ class BeerDetails extends LitElement {
         return html`
           <div id='details'>
           <h2>${this.beer.name}</h2>
-          <img class="center el-det-img" src="app/data/img/${this.beer.img}"/>
+          <img class="center el-det-img" src="/app/data/img/${this.beer.img}"/>
           <p>${this.beer.description}</p>
           </div>
         `;
